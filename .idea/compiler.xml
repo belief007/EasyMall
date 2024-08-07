@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EasyMall-common" />
+        <module name="EasyMall-service" />
+        <module name="EasyMall-management" />
+        <module name="EasyMall-pojo" />
+        <module name="EasyMall-mapper" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EasyMall-SpringBoot2" options="" />
+      <module name="EasyMall-common" options="-parameters" />
+      <module name="EasyMall-management" options="-parameters" />
+      <module name="EasyMall-mapper" options="-parameters" />
+      <module name="EasyMall-pojo" options="-parameters" />
+      <module name="EasyMall-service" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: ${mall.datasource.driver-class-name}
+    url: jdbc:mysql://${mall.datasource.host}:${mall.datasource.port}/${mall.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${mall.datasource.username}
+    password: ${mall.datasource.password}
+
+  data:
+    redis:
+      host: ${mall.redis.host}
+      port: ${mall.redis.port}
+      password: ${mall.redis.password}
+      database: ${mall.redis.database}
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.belief.entity
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+
+logging:
+  level:
+    com:
+      mall:
+        mapper: debug
+        service: info
+        controller: info
+
+easymall:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: beliefAdminMall
+    # 设置jwt过期时间
+    admin-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+    # 设置jwt签名加密时使用的秘钥
+    user-secret-key: beliefUserMall
+    # 设置jwt过期时间
+    user-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    user-token-name: Authorization
+
+
