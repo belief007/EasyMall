@@ -24,4 +24,10 @@ public interface UserService {
      * @return
      */
     User findByUsername(String username);
+
+    /**
+     * 用户信息更新接口
+     * @param user
+     */
+    void updateInfo(User user);
 }

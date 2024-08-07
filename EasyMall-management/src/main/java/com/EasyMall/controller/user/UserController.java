@@ -81,8 +81,16 @@ public class UserController {
         return Result.success();
     }
 
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
     @PostMapping("/updateInfo")
-    public Result updateInfo(){
+    @ApiOperation("更新用户信息")
+    public Result updateInfo(@RequestBody User user){
+
+        userService.updateInfo(user);
         return Result.success();
     }
 }

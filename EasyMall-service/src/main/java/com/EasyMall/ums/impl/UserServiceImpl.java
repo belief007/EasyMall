@@ -3,13 +3,12 @@ package com.EasyMall.ums.impl;
 import com.EasyMall.constant.MessageConstant;
 import com.EasyMall.exception.AccountNotFoundException;
 import com.EasyMall.exception.PasswordErrorException;
-import com.EasyMall.ums.UserMapper;
+import com.EasyMall.mapper.ums.UserMapper;
 import com.EasyMall.ums.UserService;
 import com.EasyMall.user.dto.UserLoginDTO;
 import com.EasyMall.user.dto.UserRegisterDTO;
 import com.EasyMall.user.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -77,6 +76,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return userMapper.findByUsername(username);
+    }
+
+    /**
+     * 更新用户信息接口
+     * @param user
+     */
+    @Override
+    public void updateInfo(User user) {
+        userMapper.updateInfo(user);
     }
 
 
