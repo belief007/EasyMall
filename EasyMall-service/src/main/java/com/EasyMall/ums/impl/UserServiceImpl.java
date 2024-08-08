@@ -1,10 +1,12 @@
 package com.EasyMall.ums.impl;
 
 import com.EasyMall.constant.MessageConstant;
+import com.EasyMall.context.BaseContext;
 import com.EasyMall.exception.AccountNotFoundException;
 import com.EasyMall.exception.PasswordErrorException;
 import com.EasyMall.mapper.ums.UserMapper;
 import com.EasyMall.ums.UserService;
+import com.EasyMall.user.dto.UserDTO;
 import com.EasyMall.user.dto.UserLoginDTO;
 import com.EasyMall.user.dto.UserRegisterDTO;
 import com.EasyMall.user.entity.User;
@@ -80,10 +82,15 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 更新用户信息接口
-     * @param user
+     * @param userDTO
      */
     @Override
-    public void updateInfo(User user) {
+    public void updateInfo(UserDTO userDTO) {
+        User user = new User();
+        BeanUtils.copyProperties(userDTO,user);
+
+        user.setId(BaseContext.getCurrentId());
+
         userMapper.updateInfo(user);
     }
 

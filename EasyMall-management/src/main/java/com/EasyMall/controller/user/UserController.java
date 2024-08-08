@@ -2,9 +2,11 @@ package com.EasyMall.controller.user;
 
 import com.EasyMall.constant.JwtClaimsConstant;
 import com.EasyMall.constant.MessageConstant;
+import com.EasyMall.context.BaseContext;
 import com.EasyMall.properties.JwtProperties;
 import com.EasyMall.result.Result;
 import com.EasyMall.ums.UserService;
+import com.EasyMall.user.dto.UserDTO;
 import com.EasyMall.user.dto.UserLoginDTO;
 import com.EasyMall.user.dto.UserRegisterDTO;
 import com.EasyMall.user.entity.User;
@@ -20,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/ums")
 @Slf4j
 @Api(tags = "用户端用户接口")
 public class UserController {
@@ -83,14 +85,16 @@ public class UserController {
 
     /**
      * 更新用户信息
-     * @param user
+     * @param userDTO
      * @return
      */
     @PostMapping("/updateInfo")
     @ApiOperation("更新用户信息")
-    public Result updateInfo(@RequestBody User user){
+    public Result updateInfo(@RequestBody UserDTO userDTO){
+        /*Long userId = BaseContext.getCurrentId();
 
-        userService.updateInfo(user);
+        user.setId(userId);*/
+        userService.updateInfo(userDTO);
         return Result.success();
     }
 }

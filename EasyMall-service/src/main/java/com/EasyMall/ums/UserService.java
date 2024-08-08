@@ -1,5 +1,6 @@
 package com.EasyMall.ums;
 
+import com.EasyMall.user.dto.UserDTO;
 import com.EasyMall.user.dto.UserLoginDTO;
 import com.EasyMall.user.dto.UserRegisterDTO;
 import com.EasyMall.user.entity.User;
@@ -27,7 +28,7 @@ public interface UserService {
 
     /**
      * 用户信息更新接口
-     * @param user
+     * @param userDTO
      */
-    void updateInfo(User user);
+    void updateInfo(UserDTO userDTO);
 }
