@@ -20,6 +20,12 @@
     <dependencies>
         <dependency>
             <groupId>com.EasyMall</groupId>
+            <artifactId>EasyMall-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.EasyMall</groupId>
             <artifactId>EasyMall-pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -32,6 +38,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!--aspect 面向切面编程的依赖-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
         </dependency>
 
     </dependencies>

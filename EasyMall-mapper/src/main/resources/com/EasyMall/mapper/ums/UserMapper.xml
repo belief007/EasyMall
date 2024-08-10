@@ -6,7 +6,8 @@
     <update id="updateInfo">
         update ums_user
         <set>
-            <if test="nickname !=null">nickname = #{nickname}</if>
+            <if test="nickname !=null">nickname = #{nickname},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
         </set>
         where id = #{id};
     </update>

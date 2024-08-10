@@ -1,5 +1,7 @@
 package com.EasyMall.mapper.ums;
 
+import com.EasyMall.annotation.AutoFill;
+import com.EasyMall.enumeration.OperationType;
 import com.EasyMall.user.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,12 +27,15 @@ public interface UserMapper {
      * @param user
      */
     @Insert("insert into ums_user" +
-            "(username, password) values (#{username}, #{password})")
+            "(username, password, update_time, create_time) " +
+            "values (#{username}, #{password}, #{updateTime}, #{createTime})")
+    @AutoFill(OperationType.USER_INSERT)
     void save(User user);
 
     /**
      * 用户信息更新
      * @param user
      */
+    @AutoFill(OperationType.USER_UPDATE)
     void updateInfo(User user);
 }
