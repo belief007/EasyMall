@@ -1,4 +1,4 @@
-package com.EasyMall.controller.user;
+package com.EasyMall.controller.user.ums;
 
 import com.EasyMall.constant.JwtClaimsConstant;
 import com.EasyMall.constant.MessageConstant;
@@ -95,6 +95,17 @@ public class UserController {
 
         user.setId(userId);*/
         userService.updateInfo(userDTO);
+        return Result.success();
+    }
+
+    /**
+     * 查看用户详细信息
+     * @return
+     */
+    @GetMapping("/getUserInfo")
+    @ApiOperation("获取用户详细信息")
+    public Result getUserInfo(){
+        //TODO 功能代码待完善
         return Result.success();
     }
 }

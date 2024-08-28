@@ -11,15 +11,15 @@
 
 ##### 后端技术
 
-| 技术         | 说明 |      |
-| ------------ | ---- | ---- |
-| Spirng Boot2 |      |      |
-| Token        |      |      |
-| MyBatis      |      |      |
-| PageHelper   |      |      |
-| Knifej       |      |      |
-| Lombok       |      |      |
-| Redis        |      |      |
+| 技术         | 说明 | 版本    |
+| ------------ | ---- |-------|
+| Spirng Boot2 |      | 2.7.3 |
+| Token        |      |       |
+| MyBatis      |      |       |
+| PageHelper   |      |       |
+| Knifej       |      |       |
+| Lombok       |      |       |
+| Redis        |      |       |
 
 
 
